@@ -24,7 +24,7 @@ export default defineConfig({
       ],
    },
    e2e: {
-      baseUrl: 'https://angular.realworld.how/',
+      baseUrl: 'https://trello.com/',
       setupNodeEvents(on, config) {
          on('task', taskProcesses)
          return pkgs(on, config)

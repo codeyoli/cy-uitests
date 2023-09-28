@@ -8,5 +8,7 @@ declare namespace Cypress {
        * @param pass password string
        */
       login(user: string, pass: string): Chainable<Subject>
+
+      lit(element: string): Chainable<Subject>
    }
 }

@@ -1,12 +1,23 @@
 /// <reference types='cypress'/>
 /// <reference types='../support/commands.d.ts'/>
-/// <reference types='@reportportal/agent-js-cypress/lib/commands/reportPortalCommands.d.ts'/>
 
 describe('Daily Smoke Test', () => {
-   it('Verify user can login', () => {
-      cy.info('user is doing loging')
-      cy.login(Cypress.env('user'), Cypress.env('pass'))
-      cy.screenshot()
+   it('verify user can see the home page', () => {
+      cy.visit('/')
+      cy.wait(1000)
+      cy.get('h1').as('banner')
+      cy.lit('@banner')
+      cy.get('@banner').should(
+         'have.text',
+         'Trello brings all your tasks, teammates, and tools together',
+      )
    })
 
+   it('verify user can see the login page', () => {
+      cy.visit('/login')
+      cy.get('h1').as('banner')
+      cy.get('@banner').should('be.visible')
+      cy.lit('@banner')
+      cy.get('@banner').should('have.text', 'Log in to TRELLO')
+   })
 })
