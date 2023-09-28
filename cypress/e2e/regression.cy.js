@@ -2,7 +2,7 @@
 /// <reference types='../support/commands.d.ts'/>
 
 describe('Daily Smoke Test', () => {
-   it('TC5 verify user can see the home page', () => {
+   it('TC1 verify user can see the home page', () => {
       cy.visit('/')
       cy.wait(1000)
       cy.get('h1').as('banner')
@@ -13,11 +13,11 @@ describe('Daily Smoke Test', () => {
       )
    })
 
-   it('TC6 verify user can see the login page', () => {
+   it('TC2 verify user can see the login page', () => {
       cy.visit('/login')
       cy.get('h1').as('banner')
       cy.get('@banner').should('be.visible')
       cy.lit('@banner')
-      cy.get('@banner').should('have.text', 'Log in to TRELLO')
+      cy.get('@banner').should('have.text', 'Log in to Trello')
    })
 })

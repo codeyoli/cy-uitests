@@ -5,7 +5,8 @@
    "main": "index.js",
    "type": "module",
    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+      "cloud": "npx cypress-cloud run --parallel --record --key somekey --ci-build-id ",
+      "cloud:run": "npx cypress-cloud run --spec ./cypress/e2e/**.cy.js --parallel --record --key somekey --ci-build-id "
    },
    "author": "Nijat Muhtar",
    "license": "ISC",
